@@ -1,3 +1,5 @@
+/* eslint-disable jsx-quotes */
+/* eslint-disable arrow-parens */
 import React, { useEffect, useState } from 'react';
 import './app.css';
 import ReactImage from './react.png';
@@ -7,8 +9,8 @@ const App = () => {
 
   useEffect(() => {
     fetch('/api/getUsername')
-      .then(res => res.json())
-      .then(user => setUserName(user.username));
+      .then((res) => res.json())
+      .then((user) => setUserName(user.username));
   }, [userName]);
 
   return (
@@ -18,7 +20,7 @@ const App = () => {
       ) : (
         <h1>Loading.. please wait!</h1>
       )}
-      <img src={ReactImage} alt="react" />
+      <img src={ReactImage} alt='react' />
     </div>
   );
 };
