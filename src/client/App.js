@@ -1,10 +1,8 @@
-/* eslint-disable jsx-quotes */
-/* eslint-disable arrow-parens */
 import React, { useEffect, useState } from 'react';
 import './app.css';
 import ReactImage from './react.png';
 
-const App = () => {
+function App() {
   const [userName, setUserName] = useState();
 
   useEffect(() => {
@@ -23,6 +21,6 @@ const App = () => {
       <img src={ReactImage} alt='react' />
     </div>
   );
-};
+}
 
 export default App;
