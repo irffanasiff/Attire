@@ -1,25 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import './app.css';
-import ReactImage from './react.png';
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import { Flex, ChakraProvider } from '@chakra-ui/react';
+import theme from './Theme';
 
 function App() {
-  const [userName, setUserName] = useState();
-
-  useEffect(() => {
-    fetch('/api/getUsername')
-      .then((res) => res.json())
-      .then((user) => setUserName(user.username));
-  }, [userName]);
-
   return (
-    <div>
-      {userName ? (
-        <h1>{`Hello ${userName}`}</h1>
-      ) : (
-        <h1>Loading.. please wait!</h1>
-      )}
-      <img src={ReactImage} alt='react' />
-    </div>
+    <ChakraProvider theme={theme}>
+      <Flex
+        as='header'
+        position={'absolute'}
+        width={'100vw'}
+        top={'0'}
+        alignItems={'center'}
+        justifyContent={'center'}
+        zIndex={'1'}
+      >
+        <Navbar />
+      </Flex>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        {/* <Route path='/home' element={<Navigate replace to='/' />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact-us' element={<Contact />} /> */}
+      </Routes>
+      {/* <Footer /> */}
+    </ChakraProvider>
   );
 }
 
