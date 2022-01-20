@@ -22,7 +22,11 @@
     "express": "^4.17.2",
     "framer-motion": "^5.6.0",
     "react": "^17.0.2",
+    "react-datepicker": "^4.6.0",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.24.1",
+    "react-icons": "^4.3.1",
+    "react-intersection-observer": "^8.33.1",
     "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
@@ -43,6 +47,8 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.15",
+    "sass": "^1.49.0",
+    "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.66.0",

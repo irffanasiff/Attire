@@ -10,7 +10,13 @@ import {
   HStack,
 } from '@chakra-ui/react';
 import Button from '../components/HOC/Button.HOC';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+const squareVariants = {
+  initial: { scale: 1, transition: { type: 'tween', duration: 0.5 } },
+  visible: { scale: 1.25, transition: { duration: 0.5 } },
+};
 
 const MotionFlex = motion(Flex);
 const names = ['Dry Clean', 'Laundary', 'Tailoring', 'Alteration'];
@@ -19,16 +25,34 @@ var i = 1;
 function Home() {
   const [newName, setnewName] = useState('Dry Clean');
 
+  const controls = useAnimation();
+  const { ref, inView, entry } = useInView({
+    threshold: 1,
+  });
+
   const shuffle = useCallback(() => {
     const index = i % 4;
     i++;
     setnewName(names[index]);
   }, []);
 
+  //useEffect for text animation
   useEffect(() => {
     const intervalID = setInterval(shuffle, 800);
+
     return () => clearInterval(intervalID);
   }, [shuffle]);
+
+  //useEffect for transition
+  useEffect(() => {
+    console.log(inView, entry);
+    if (!inView) {
+      controls.start('visible');
+    }
+    if (inView) {
+      controls.start('initial');
+    }
+  }, [entry]);
 
   //this method will be called in child component when clicked
   const whenClickedFunction = () => {
@@ -69,7 +93,7 @@ function Home() {
           >
             {newName}
           </Text>
-          <Stack direction={['column', 'row']} my={[4, 8]}>
+          <Stack direction={['column', 'row']} my={[4, 8]} ref={ref}>
             <Button
               title='click me'
               varient='primary'
@@ -83,7 +107,10 @@ function Home() {
         <MotionFlex
           initial={{ y: '100vh' }}
           animate={{ y: 0 }}
-          transition={{ type: 'tween', duration: 0.5 }}
+          animate={controls}
+          initial='initial'
+          variants={squareVariants}
+          className='square'
           width={['80vw', '80vw']}
           height={'1000px'}
           bg={'white'}

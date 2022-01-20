@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
 
+// accepts title and varient
 const Button = (props) => {
   const onClickHandler = () => {
     props.functionCallwhenClicked();

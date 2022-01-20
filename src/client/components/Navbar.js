@@ -88,11 +88,11 @@ const MenuLinks = ({ isOpen }) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to='/'>Home</MenuItem>
-        <MenuItem to='/how'>Price List </MenuItem>
-        <MenuItem to='/faetures'>About </MenuItem>
-        <MenuItem to='/pricing'>Contact </MenuItem>
-        <MenuItem to='/signup' isLast>
-          <Flex border={'2px solid white'}>
+        <MenuItem to='/price-list'>Price List </MenuItem>
+        <MenuItem to='/about'>About </MenuItem>
+        <MenuItem to='/contact'>Contact </MenuItem>
+        <MenuItem to='/book-collection' isLast>
+          <Flex border={['2px solid white', '2px solid white', 'none']}>
             <Button
               title='Book Collection'
               varient='primary'
