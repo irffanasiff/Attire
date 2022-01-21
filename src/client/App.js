@@ -1,25 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import './app.css';
-import ReactImage from './react.png';
+import React from 'react';
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
+import { Flex, ChakraProvider } from '@chakra-ui/react';
+
+import Navbar from './components/Navbar';
+import { Footer } from './components/Footer/Footer';
+import Home from './pages/Home';
+import theme from './Theme';
+import About from './pages/About';
+import ContactUS from './pages/ContactUS';
+import PriceList from './pages/PriceList';
+import BookCollection from './pages/BookCollection';
+import Terms from './pages/Terms';
+
+export const newTheme = {
+  ...theme,
+  shadows: { ...theme.shadows, outline: '0 !important' },
+  colors: { ...theme.colors, primary: '#ffffff' },
+};
 
 function App() {
-  const [userName, setUserName] = useState();
-
-  useEffect(() => {
-    fetch('/api/getUsername')
-      .then((res) => res.json())
-      .then((user) => setUserName(user.username));
-  }, [userName]);
-
   return (
-    <div>
-      {userName ? (
-        <h1>{`Hello ${userName}`}</h1>
-      ) : (
-        <h1>Loading.. please wait!</h1>
-      )}
-      <img src={ReactImage} alt='react' />
-    </div>
+    <ChakraProvider theme={newTheme}>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Navigate replace to='/' />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/price-list' element={<PriceList />} />
+        <Route path='/contact' element={<ContactUS />} />
+        <Route path='/book-collection' element={<BookCollection />} />
+        <Route path='/terms' element={<Terms />} />
+
+        {/* <Route path='/home' element={<Navigate replace to='/' />} />
+        <Route path='/contact-us' element={<Contact />} /> */}
+      </Routes>
+      <Footer />
+    </ChakraProvider>
   );
 }
 

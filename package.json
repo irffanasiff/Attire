@@ -13,11 +13,22 @@
   "author": "Irfan",
   "license": "ISC",
   "dependencies": {
+    "@chakra-ui/react": "^1.7.4",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@fontsource/poppins": "^4.5.0",
     "babel-polyfill": "^6.26.0",
     "dotenv": "^14.2.0",
     "express": "^4.17.2",
+    "framer-motion": "^5.6.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-datepicker": "^4.6.0",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.24.1",
+    "react-icons": "^4.3.1",
+    "react-intersection-observer": "^8.33.1",
+    "react-router-dom": "^6.2.1",
+    "react-slick": "^0.28.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
@@ -37,6 +48,8 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.15",
+    "sass": "^1.49.0",
+    "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.66.0",
