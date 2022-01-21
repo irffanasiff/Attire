@@ -19,7 +19,7 @@ const Layout = (props) => {
           src={props.img}
           alt={props.title}
           width={'100vw'}
-          height={['30vh', '50vh']}
+          height={['30vh', '40vh']}
           objectFit={'cover'}
           objectPosition={'center'}
         />

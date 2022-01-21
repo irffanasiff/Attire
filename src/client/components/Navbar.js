@@ -9,24 +9,30 @@ const NavBar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Flex
-      as='nav'
-      align='center'
-      justify='space-between'
-      wrap='wrap'
-      w='100%'
-      maxW={'5xl'}
-      mb={8}
-      p={['4', '8']}
-      bg={'transparent'}
-      color={'white'}
-      bg={isOpen ? 'attire.2' : 'transparent'}
-      alignSelf={'center'}
-    >
-      <Logo w='100px' color={'attire.300'} />
-      <MenuToggle toggle={toggle} isOpen={isOpen} />
-      <MenuLinks isOpen={isOpen} />
-    </Flex>
+    <Center w={'100%'} overflow={{ base: 'hidden', lg: 'visible' }}>
+      <Flex
+        as='nav'
+        align='center'
+        justify='space-between'
+        wrap='wrap'
+        w='100%'
+        maxW={'6xl'}
+        mb={8}
+        p={['4', '8']}
+        bg={'transparent'}
+        color={'white'}
+        bg={isOpen ? 'attire.2' : 'transparent'}
+        alignSelf={'center'}
+        zIndex={100}
+        mx={'auto'}
+        position={'absolute'}
+        top={'0'}
+      >
+        <Logo w='100px' color={'attire.300'} />
+        <MenuToggle toggle={toggle} isOpen={isOpen} />
+        <MenuLinks isOpen={isOpen} />
+      </Flex>
+    </Center>
   );
 };
 
@@ -54,7 +60,7 @@ const MenuIcon = () => (
 
 const MenuToggle = ({ toggle, isOpen }) => {
   return (
-    <Box display={{ base: 'block', md: 'none' }} onClick={toggle}>
+    <Box display={{ base: 'block', lg: 'none' }} onClick={toggle}>
       {isOpen ? <CloseIcon /> : <MenuIcon />}
     </Box>
   );
@@ -76,15 +82,15 @@ const MenuLinks = ({ isOpen }) => {
   };
   return (
     <Box
-      display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
-      flexBasis={{ base: '100%', md: 'auto' }}
+      display={{ base: isOpen ? 'block' : 'none', lg: 'block' }}
+      flexBasis={{ base: '100%', lg: 'auto' }}
     >
       <Stack
         spacing={8}
         align='center'
-        h={['93vh', '93vh', 'auto']}
-        justify={['center', 'center', 'flex-end', 'flex-end']}
-        direction={['column', 'column', 'row', 'row']}
+        h={['93vh', '93vh', '93vh', 'auto']}
+        justify={['center', 'center', 'center', 'flex-end']}
+        direction={['column', 'column', 'column', 'row']}
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to='/'>Home</MenuItem>

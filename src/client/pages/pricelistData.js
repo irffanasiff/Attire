@@ -2,6 +2,8 @@ export const ratelistData = [
   {
     id: '1',
     title: 'Dry Cleaning List',
+    icon: './SVG/clothes.svg',
+    subItems: false,
     items: [
       {
         name: 'Two-Piece Suit',
@@ -64,6 +66,8 @@ export const ratelistData = [
   {
     id: '2',
     title: 'Shirt Service',
+    icon: 'RiShirtLine',
+    subItems: false,
     items: [
       {
         name: 'Two-Piece Suit',
@@ -74,6 +78,8 @@ export const ratelistData = [
   {
     id: '3',
     title: 'Wash & Press',
+    icon: 'MdOutlineLocalLaundryService',
+    subItems: false,
     items: [
       {
         name: 'Two-Piece Suit',
@@ -84,6 +90,8 @@ export const ratelistData = [
   {
     id: '4',
     title: 'Ironing Only',
+    icon: 'MdOutlineIron',
+    subItems: false,
     items: [
       {
         name: 'Two-Piece Suit',
@@ -94,6 +102,8 @@ export const ratelistData = [
   {
     id: '5',
     title: 'Household cleaning price',
+    logo: 'MdOutlineOtherHouses,',
+    subItems: false,
     items: [
       {
         name: 'Two-Piece Suit',
@@ -104,6 +114,8 @@ export const ratelistData = [
   {
     id: '6',
     title: 'Household Iron Only',
+    icon: 'MdOutlineDryCleaning',
+    subItems: false,
     items: [
       {
         name: 'Single Set',
@@ -174,10 +186,12 @@ export const ratelistData = [
   {
     id: '7',
     title: 'Repairs & Alterations',
+    icon: 'GiSewingNeedle',
+    subItems: true,
     items: [
       {
-        title: 'Trouser/ Jean',
-        category: [
+        categoryTitle: 'Trouser/ Jean',
+        categoryItems: [
           {
             name: 'Shortening',
             price: '£12.00',
@@ -225,8 +239,8 @@ export const ratelistData = [
         ],
       },
       {
-        title: 'Jacket / Coat',
-        category: [
+        categoryTitle: 'Jacket / Coat',
+        categoryItems: [
           {
             name: 'Shorten Sleeve',
             price: '£25.00',
@@ -266,8 +280,8 @@ export const ratelistData = [
         ],
       },
       {
-        title: 'Shirt',
-        category: [
+        categoryTitle: 'Shirt',
+        categoryItems: [
           {
             name: 'Shorten Sleeve',
             price: '£20.00',
@@ -299,8 +313,8 @@ export const ratelistData = [
         ],
       },
       {
-        title: 'Dress / Skirt',
-        category: [
+        categoryTitle: 'Dress / Skirt',
+        categoryItems: [
           {
             name: 'Shorten',
             price: '£16.00',
@@ -324,8 +338,8 @@ export const ratelistData = [
         ],
       },
       {
-        title: 'Buttons',
-        category: [
+        categoryTitle: 'Buttons',
+        categoryItems: [
           {
             name: 'Stitch',
             price: '£2.50',

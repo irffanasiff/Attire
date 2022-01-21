@@ -60,19 +60,14 @@ const BookCollection = () => {
   //   const data = await res.json();
   //   return console.log(data);
   // };
+
   return (
     <>
       <Layout
         img='https://images.unsplash.com/photo-1597484662003-7cf93e97447c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80'
         title='Book Collection'
       />
-      <Center
-        w={'full'}
-        padding={'4'}
-        backgroundColor={'attire.1'}
-        zIndex={'7'}
-        position={'absolute'}
-      >
+      <Center w={'full'} padding={'4'} bg={'white'}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <VStack
             textColor={'attire.2'}

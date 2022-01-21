@@ -1,4 +1,4 @@
-import { Center, Flex, Stack, Text, VStack, HStack } from '@chakra-ui/react';
+import { Center, Stack, Text, VStack, HStack } from '@chakra-ui/react';
 import React from 'react';
 import Layout from '../components/HOC/Layout.HOC';
 
@@ -11,15 +11,7 @@ const About = () => {
       />
 
       <VStack fontSize={'3xl'}>Hello</VStack>
-      <Center
-        w={'full'}
-        padding={'4'}
-        //h={'900px'}
-        bg={'white'}
-        //position={'absolute'}
-        //top={['30vh', '50vh']}
-        // zIndex={2}
-      >
+      <Center w={'full'} padding={'4'} bg={'white'}>
         <VStack textColor={'attire.2'} py={['1rem', '2rem']}>
           <Text fontWeight={'600'} fontSize={['lg', 'xl', '3xl']}>
             Our Mission
