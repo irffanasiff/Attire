@@ -12,7 +12,8 @@ import {
 import Button from '../components/HOC/Button.HOC';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
+import { useNavigate } from 'react-router-dom';
+import heroImage from '../../../public/heroImage.png';
 import Services from '../components/Services';
 import Testimonials from '../components/Testimonials';
 import Location from '../components/Location';
@@ -28,6 +29,7 @@ var i = 1;
 
 function Home() {
   const [newName, setnewName] = useState('Dry Clean');
+  const navigate = useNavigate();
 
   const controls = useAnimation();
   const { ref, inView, entry } = useInView({
@@ -59,8 +61,11 @@ function Home() {
   }, [entry]);
 
   //this method will be called in child component when clicked
-  const whenClickedFunction = () => {
-    window.alert('button pressed');
+  const whenClickedFunction1 = () => {
+    navigate('/book-collection');
+  };
+  const whenClickedFunction2 = () => {
+    navigate('/contact');
   };
 
   return (
@@ -98,11 +103,15 @@ function Home() {
           </Text>
           <Stack direction={['column', 'row']} my={[4, 8]} ref={ref}>
             <Button
-              title='click me'
+              title='Book Collection'
               varient='primary'
-              functionCallwhenClicked={whenClickedFunction}
+              functionCallwhenClicked={whenClickedFunction1}
             />
-            <Button title='click me 2' varient='secondary' />
+            <Button
+              title='Contact Us'
+              varient='secondary'
+              functionCallwhenClicked={whenClickedFunction2}
+            />
           </Stack>
         </VStack>
       </Center>

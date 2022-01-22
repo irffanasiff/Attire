@@ -37,7 +37,10 @@ export const Footer = () => (
           spacing={{ base: '10', md: '20' }}
         >
           <LinkGrid spacing={{ base: '10', md: '20', lg: '28' }} flex='1' />
-          <ContactDetails width={{ base: 'full', md: 'sm' }} />
+          <ContactDetails
+            width={{ base: 'full', md: 'sm' }}
+            textcolor='white'
+          />
         </Stack>
       </Stack>
       <Stack
