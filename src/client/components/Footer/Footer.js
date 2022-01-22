@@ -1,6 +1,7 @@
 import { Box, Stack, StackDivider, Text } from '@chakra-ui/react';
-import * as React from 'react';
+import React from 'react';
 import ContactDetails from '../ContactDetails';
+import Logo from '../Logo';
 import { Copyright } from './Copyright';
 import { LinkGrid } from './LinkGrid';
 import { SocialMediaLinks } from './SocialMediaLinks';
@@ -28,7 +29,7 @@ export const Footer = () => (
             mx={['auto']}
             letterSpacing={'0.7rem'}
           >
-            ATTIRE
+            <Logo />
           </Text>
         </Box>
         <Stack

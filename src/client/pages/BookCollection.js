@@ -12,20 +12,37 @@ import {
   Checkbox,
   Button,
   Textarea,
+  Select,
+  useDisclosure,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
+  ModalFooter,
+  Modal,
+  ModalHeader,
+  ModalCloseButton,
+  Heading,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
+
 import { Controller, useForm } from 'react-hook-form';
 import DatePicker from 'react-datepicker';
+import emailjs from '@emailjs/browser';
+
 import 'react-datepicker/dist/react-datepicker.css';
 import '../styles/date-picker.css';
+
 import setHours from 'date-fns/setHours';
 import setMinutes from 'date-fns/setMinutes';
+
 import Layout from '../components/HOC/Layout.HOC';
 
 const BookCollection = () => {
   const [startDate, setStartDate] = useState(
     setHours(setMinutes(new Date(), 30), 16)
   );
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const {
     handleSubmit,
     register,
@@ -35,31 +52,25 @@ const BookCollection = () => {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = (values) => {
-    console.log(values);
+  const sendEmail = (formData) => {
+    emailjs
+      .send(
+        'service_z3pbp0h',
+        'template_2nel7sv',
+        formData,
+        'user_bRurspjYqg9CqaFExCU8l'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    onOpen();
+    reset();
   };
-
-  // const handleSubmit = async (event) => {
-  //event.preventDefault();
-  //   let databody = {
-  //     title: title,
-  //     img: url,
-  //     code: code,
-  //     size: size,
-  //     category: category,
-  //     featured: featured,
-  //   };
-
-  //   const res = await fetch('/api/v1/products', {
-  //     method: 'POST',
-  //     body: JSON.stringify(databody),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //   });
-  //   const data = await res.json();
-  //   return console.log(data);
-  // };
 
   return (
     <>
@@ -67,8 +78,8 @@ const BookCollection = () => {
         img='https://images.unsplash.com/photo-1597484662003-7cf93e97447c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80'
         title='Book Collection'
       />
-      <Center w={'full'} padding={'4'} bg={'white'}>
-        <form onSubmit={handleSubmit(onSubmit)}>
+      <Center w={'full'} padding={'4'} bg={'attire.1'} pb={'5rem'}>
+        <form onSubmit={handleSubmit(sendEmail)}>
           <VStack
             textColor={'attire.2'}
             background={'white'}
@@ -248,120 +259,134 @@ const BookCollection = () => {
               flexDirection={['column', 'row']}
               flexWrap={'wrap'}
             >
-              <FormControl maxW={'30rem'} isRequired>
-                <FormLabel
-                  htmlFor='pincode'
-                  fontSize={['md', 'xl', '2xl']}
-                  fontWeight={'light'}
+              <Center alignItems={{ base: 'flex-end', lg: 'center' }}>
+                <FormControl maxW={'20rem'} isRequired>
+                  <FormLabel
+                    htmlFor='colleciton'
+                    fontSize={['md', 'xl', '2xl']}
+                    fontWeight={'light'}
+                  >
+                    Collection
+                  </FormLabel>
+                  <Controller
+                    control={control}
+                    name='collection'
+                    render={({ field: { onChange, onBlur, value, ref } }) => (
+                      <DatePicker
+                        withPortal
+                        placeholderText='Date'
+                        selected={value}
+                        onChange={onChange}
+                        dateFormat='MM/dd/yyyy'
+                        popperModifiers={{
+                          preventOverflow: {
+                            enabled: true,
+                          },
+                        }}
+                      />
+                    )}
+                  />
+                  <FormHelperText
+                    fontWeight={'light'}
+                    color={'green.300'}
+                    display={{ base: 'none', lg: 'block' }}
+                  >
+                    Please enter the date you would like your items collected
+                  </FormHelperText>
+                </FormControl>
+                <FormControl
+                  maxW={'12rem'}
+                  isRequired
+                  border={'1px solid black'}
+                  padding={'0.45rem'}
+                  mb={{ base: '0', lg: ' 0.35rem' }}
+                  borderLeft={'none'}
                 >
-                  Collection
-                </FormLabel>
-                <Controller
-                  control={control}
-                  name='collection'
-                  render={({ field: { onChange, onBlur, value, ref } }) => (
-                    <DatePicker
-                      //withPortal
-                      placeholderText='Select Date and Time'
-                      selected={value}
-                      onChange={onChange}
-                      dateFormat='MM/dd/yyyy  EE hh:mm a'
-                      //locale='pt-BR'
-                      showTimeSelect
-                      timeFormat='p'
-                      timeIntervals={10}
-                      includeTimes={[
-                        setHours(setMinutes(new Date(), 0), 7),
-                        setHours(setMinutes(new Date(), 10), 7),
-                        setHours(setMinutes(new Date(), 20), 7),
-                        setHours(setMinutes(new Date(), 30), 7),
-                        setHours(setMinutes(new Date(), 40), 7),
-                        setHours(setMinutes(new Date(), 50), 7),
-                        setHours(setMinutes(new Date(), 0), 19),
-                        setHours(setMinutes(new Date(), 10), 19),
-                        setHours(setMinutes(new Date(), 20), 19),
-                        setHours(setMinutes(new Date(), 30), 19),
-                        setHours(setMinutes(new Date(), 40), 19),
-                        setHours(setMinutes(new Date(), 50), 19),
-                      ]}
-                      popperModifiers={{
-                        preventOverflow: {
-                          enabled: true,
-                        },
-                      }}
-                    />
-                  )}
-                />
-
-                <FormHelperText fontWeight={'light'} color={'green.300'}>
-                  Please enter the date you would like your items collected
-                </FormHelperText>
-              </FormControl>
-              <FormControl maxW={'30rem'} isRequired>
-                <FormLabel
-                  htmlFor='pincode'
-                  fontSize={['md', 'xl', '2xl']}
-                  fontWeight={'light'}
+                  <Select
+                    name='collectionTime'
+                    size='md'
+                    placeholder='Time'
+                    variant='unstyled'
+                    color={'gray.500'}
+                    {...register('collectionTime')}
+                  >
+                    <option value='7PM to 8PM'>7PM to 8PM</option>
+                    <option value='7AM to 8AM'>7AM to 8AM</option>
+                  </Select>
+                </FormControl>
+              </Center>
+              <Center alignItems={{ base: 'flex-end', lg: 'center' }}>
+                <FormControl maxW={'20rem'} isRequired>
+                  <FormLabel
+                    htmlFor='colleciton'
+                    fontSize={['md', 'xl', '2xl']}
+                    fontWeight={'light'}
+                  >
+                    Drop of Time
+                  </FormLabel>
+                  <Controller
+                    control={control}
+                    name='drop'
+                    render={({ field: { onChange, onBlur, value, ref } }) => (
+                      <DatePicker
+                        withPortal
+                        placeholderText='Date'
+                        selected={value}
+                        onChange={onChange}
+                        dateFormat='MM/dd/yyyy'
+                        popperModifiers={{
+                          preventOverflow: {
+                            enabled: true,
+                          },
+                        }}
+                      />
+                    )}
+                  />
+                  <FormHelperText
+                    fontWeight={'light'}
+                    color={'green.300'}
+                    display={{ base: 'none', lg: 'block' }}
+                  >
+                    Chosen drop off time must be at least 24 hours after pickup
+                  </FormHelperText>
+                </FormControl>
+                <FormControl
+                  maxW={'12rem'}
+                  isRequired
+                  border={'1px solid black'}
+                  padding={'0.45rem'}
+                  mb={{ base: '0', lg: ' 0.35rem' }}
+                  borderLeft={'none'}
                 >
-                  Drop of Time
-                </FormLabel>
-                <Controller
-                  control={control}
-                  name='Drop'
-                  render={({ field: { onChange, onBlur, value, ref } }) => (
-                    <DatePicker
-                      //withPortal
-                      placeholderText='Select Date and Time'
-                      selected={value}
-                      onChange={onChange}
-                      dateFormat='MM/dd/yyyy  EE hh:mm a'
-                      //locale='pt-BR'
-                      showTimeSelect
-                      timeFormat='p'
-                      timeIntervals={10}
-                      includeTimes={[
-                        setHours(setMinutes(new Date(), 0), 7),
-                        setHours(setMinutes(new Date(), 10), 7),
-                        setHours(setMinutes(new Date(), 20), 7),
-                        setHours(setMinutes(new Date(), 30), 7),
-                        setHours(setMinutes(new Date(), 40), 7),
-                        setHours(setMinutes(new Date(), 50), 7),
-                        setHours(setMinutes(new Date(), 0), 19),
-                        setHours(setMinutes(new Date(), 10), 19),
-                        setHours(setMinutes(new Date(), 20), 19),
-                        setHours(setMinutes(new Date(), 30), 19),
-                        setHours(setMinutes(new Date(), 40), 19),
-                        setHours(setMinutes(new Date(), 50), 19),
-                      ]}
-                      popperModifiers={{
-                        preventOverflow: {
-                          enabled: true,
-                        },
-                      }}
-                    />
-                  )}
-                />
-
-                <FormHelperText fontWeight={'light'} color={'green.300'}>
-                  Chosen drop off time must be at least 24 hours after pickup
-                </FormHelperText>
-              </FormControl>
+                  <Select
+                    name='dropOffTime'
+                    size='md'
+                    placeholder='Time'
+                    variant='unstyled'
+                    color={'gray.400'}
+                    {...register('dropOffTime')}
+                  >
+                    <option value='7PM to 8PM'>7PM to 8PM</option>
+                    <option value='7AM to 8AM'>7AM to 8AM</option>
+                  </Select>
+                </FormControl>
+              </Center>
               <FormControl maxW={'30rem'}>
                 <FormLabel
-                  htmlFor='address'
+                  htmlFor='info'
                   fontSize={['md', 'xl', '2xl']}
                   fontWeight={'light'}
                 >
                   Additional Information
                 </FormLabel>
                 <Textarea
-                  id='additionalinfo'
+                  id='info'
                   type='text'
                   borderRadius={'0'}
                   borderColor={'attire.2'}
                   fontSize={['md', 'lg']}
                   fontWeight={'light'}
-                  {...register('additionalinfo')}
+                  {...register('info')}
                 />
               </FormControl>
               <FormControl maxW={'30rem'}>
@@ -410,6 +435,41 @@ const BookCollection = () => {
               Submit
             </Button>
           </Center>
+          <Modal
+            onClose={onClose}
+            isOpen={isOpen}
+            isCentered
+            borderRadius={'0'}
+          >
+            <ModalOverlay />
+            <ModalContent mx={'1rem'}>
+              <ModalHeader>
+                <Text
+                  fontSize={'4xl'}
+                  w={'fit-content'}
+                  mx={'auto'}
+                  mt={'1rem'}
+                >
+                  👏
+                </Text>
+              </ModalHeader>
+              <ModalCloseButton />
+              <ModalBody m={['1rem', '2rem']}>
+                <Heading
+                  mx='auto'
+                  textAlign={'center'}
+                  fontSize={'2xl'}
+                  mb={'1.5rem'}
+                >
+                  Thanks for your order
+                </Heading>
+                <Text textAlign={'center'} mx={'auto'}>
+                  Your order have been place our person will reach out to you
+                  soon.
+                </Text>
+              </ModalBody>
+            </ModalContent>
+          </Modal>
         </form>
       </Center>
     </>

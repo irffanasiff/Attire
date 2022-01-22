@@ -15,6 +15,7 @@ import { useInView } from 'react-intersection-observer';
 
 import Services from '../components/Services';
 import Testimonials from '../components/Testimonials';
+import Location from '../components/Location';
 
 const squareVariants = {
   initial: { scale: 1, transition: { type: 'tween', duration: 0.5 } },
@@ -126,8 +127,32 @@ function Home() {
         <Center
           //backgroundColor={'green.200'}
           mt={{ base: '2000px', sm: '2200px', lg: '1400px', xl: '900px' }}
+          flexDirection={'column'}
         >
+          <Text
+            fontWeight={'500'}
+            fontSize={['xl', '2xl', '3xl']}
+            textColor={'white'}
+            mt={['1rem', '2rem']}
+            mx={'2rem'}
+            textAlign={'center'}
+          >
+            What people are saying about Us.
+          </Text>
+          <Text
+            fontWeight={'300'}
+            fontSize={['sm', 'md', 'lg']}
+            textColor={'white'}
+            my={['1rem', '2rem']}
+            mx={'2rem'}
+            textAlign={'center'}
+          >
+            Dont take our words for it, here's what others have to say.
+          </Text>
           <Testimonials />
+          <Center>
+            <Location />
+          </Center>
         </Center>
       </Center>
     </>
