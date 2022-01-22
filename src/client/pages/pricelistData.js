@@ -109,6 +109,42 @@ export const ratelistData = [
         name: 'Two-Piece Suit',
         price: '£10.95',
       },
+      {
+        name: 'Two-Piece Suit',
+        price: '£10.95',
+      },
+      {
+        name: 'Two-Piece Suit',
+        price: '£10.95',
+      },
+      {
+        name: 'Two-Piece Suit',
+        price: '£10.95',
+      },
+      {
+        name: 'Two-Piece Suit',
+        price: '£10.95',
+      },
+      {
+        name: 'Two-Piece Suit',
+        price: '£10.95',
+      },
+      {
+        name: 'Two-Piece Suit',
+        price: '£10.95',
+      },
+      {
+        name: 'Two-Piece Suit',
+        price: '£10.95',
+      },
+      {
+        name: 'Two-Piece Suit',
+        price: '£10.95',
+      },
+      {
+        name: 'Two-Piece Suit',
+        price: '£10.95',
+      },
     ],
   },
   {

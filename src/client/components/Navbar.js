@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link, Box, Flex, Text, Stack, Center } from '@chakra-ui/react';
+import { Box, Flex, Text, Stack, Center } from '@chakra-ui/react';
 import Logo from './Logo';
 import Button from './HOC/Button.HOC';
+import { Link, NavigationType, useNavigate } from 'react-router-dom';
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -28,7 +29,7 @@ const NavBar = (props) => {
         position={'absolute'}
         top={'0'}
       >
-        <Logo width='3rem' />
+        <Logo />
         <MenuToggle toggle={toggle} isOpen={isOpen} />
         <MenuLinks isOpen={isOpen} />
       </Flex>
@@ -66,10 +67,15 @@ const MenuToggle = ({ toggle, isOpen }) => {
   );
 };
 
-const MenuItem = ({ children, isLast, to = '/', ...rest }) => {
+const MenuItem = ({ navigateTo, children, ...rest }) => {
   return (
-    <Link href={to}>
-      <Text display='block' fontSize={['2xl', '2xl', 'lg']} {...rest}>
+    <Link to={navigateTo}>
+      <Text
+        _active={{ borderBottom: '1px solid white' }}
+        display='block'
+        fontSize={['2xl', '2xl', 'lg']}
+        {...rest}
+      >
         {children}
       </Text>
     </Link>
@@ -77,8 +83,10 @@ const MenuItem = ({ children, isLast, to = '/', ...rest }) => {
 };
 
 const MenuLinks = ({ isOpen }) => {
+  const navigate = useNavigate();
+
   const whenClickedFunction = () => {
-    window.alert('button pressed');
+    navigate('/book-collection');
   };
   return (
     <Box
@@ -93,11 +101,11 @@ const MenuLinks = ({ isOpen }) => {
         direction={['column', 'column', 'column', 'row']}
         pt={[4, 4, 0, 0]}
       >
-        <MenuItem to='/'>Home</MenuItem>
-        <MenuItem to='/price-list'>Price List </MenuItem>
-        <MenuItem to='/about'>About </MenuItem>
-        <MenuItem to='/contact'>Contact </MenuItem>
-        <MenuItem to='/book-collection' isLast>
+        <MenuItem navigateTo='/'>Home</MenuItem>
+        <MenuItem navigateTo='/price-list'>Price List </MenuItem>
+        <MenuItem navigateTo='/about'>About </MenuItem>
+        <MenuItem navigateTo='/contact'>Contact </MenuItem>
+        <MenuItem navigateTo='/book-collection' isLast>
           <Flex border={['2px solid white', '2px solid white', 'none']}>
             <Button
               title='Book Collection'

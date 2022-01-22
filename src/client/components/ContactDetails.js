@@ -4,18 +4,18 @@ import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { BsTelephone } from 'react-icons/bs';
 import { MdAlternateEmail } from 'react-icons/md';
 
-const ContactDetails = () => {
+const ContactDetails = (props) => {
   return (
     <VStack
-      w={['80vw', '60vw']}
+      w={'fit-content'}
       alignItems={'flex-start'}
       align={'start'}
       alignSelf={'center'}
     >
       <HStack>
-        <HiOutlineLocationMarker color='white' />
+        <HiOutlineLocationMarker color={props.textcolor} />
         <Text
-          textColor={'white'}
+          textColor={props.textcolor}
           fontSize={{ base: 'xs', md: 'md' }}
           fontWeight={'400'}
         >
@@ -23,9 +23,9 @@ const ContactDetails = () => {
         </Text>
       </HStack>
       <HStack>
-        <BsTelephone color='white' />
+        <BsTelephone color={props.textcolor} />
         <Text
-          textColor={'white'}
+          textColor={props.textcolor}
           fontSize={{ base: 'xs', md: 'md' }}
           fontWeight={'400'}
         >
@@ -33,9 +33,9 @@ const ContactDetails = () => {
         </Text>
       </HStack>
       <HStack>
-        <MdAlternateEmail color='white' />
+        <MdAlternateEmail color={props.textcolor} />
         <Text
-          textColor={'white'}
+          textColor={props.textcolor}
           fontSize={{ base: 'xs', md: 'md' }}
           fontWeight={'400'}
         >
