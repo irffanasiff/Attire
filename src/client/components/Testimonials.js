@@ -1,36 +1,64 @@
 import React from 'react';
-import { Box, Heading, Stack, Image, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  Stack,
+  Image,
+  Text,
+  Avatar,
+  Flex,
+  Center,
+  VStack,
+} from '@chakra-ui/react';
 import Slider from 'react-slick';
+import { ImQuotesLeft } from 'react-icons/im';
 
 const settings = {
   dots: true,
-  arrows: false,
-  infinite: true,
+  autoScroll: true,
   autoplay: true,
-  speed: 1000,
   autoplaySpeed: 2000,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  centerMode: true,
-  centerPadding: '60px',
+  infinite: true,
+  speed: 500,
   slidesToShow: 3,
+  slidesToScroll: 1,
+  initialSlide: 0,
+  centerMode: true,
   responsive: [
     {
-      breakpoint: 768,
+      breakpoint: 1024,
       settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
         slidesToShow: 3,
+        slidesToScroll: 3,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        infinite: true,
+        infinite: true,
+        centerMode: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        infinite: true,
+        centerMode: true,
+        initialSlide: 2,
       },
     },
     {
       breakpoint: 480,
       settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
         slidesToShow: 1,
+        centerMode: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        infinite: true,
+        slidesToScroll: 1,
       },
     },
   ],
@@ -39,28 +67,24 @@ const settings = {
 export default function CaptionCarousel() {
   const cards = [
     {
-      title: 'Design Projects 1',
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:
-        'https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2018&q=80',
+      name: 'Angel Dokidis',
+      body: 'Quality of Work – The Best.  When you say you will be there, you are there – thank you. Staff – the Best.  Everything is very clean & neat',
+      url: 'https://images.generated.photos/uKjxbHEufqSoLeZXqc9kCzDFhbx_2r555M_Zq3FGmrs/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTQ2NTc2LmpwZw.jpg',
     },
     {
-      title: 'Design Projects 2',
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:
-        'https://images.unsplash.com/photo-1579664531470-ac357f8f8e2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+      name: 'Adison Aminoff',
+      body: 'I received outstanding service and I was so fortunate to pick your laundry in the telephone book.  There is nothing you can do differently to make my experience better.',
+      url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkstvneL1UVFnPpjuthvShjgYbPSrdNXIMcw&usqp=CAU',
     },
     {
-      title: 'Design Projects 3',
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:
-        'https://images.unsplash.com/photo-1560243563-062bfc001d68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+      name: 'Justin Calzoni',
+      body: ' I took my duvet cover and pillow cases for the drop off service and it was quick and easy to do. Will come here again for my laundry needs.',
+      url: 'https://i1.sndcdn.com/avatars-000583246488-dhm5la-t240x240.jpg',
     },
     {
-      title: 'Design Projects 3',
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:
-        'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+      name: 'Justin Calzoni',
+      body: 'This place was amazing! Quality service and very clean. I took my duvet cover and pillow cases for the drop off service and it was quick and easy to do. Will come here again for my laundry needs.',
+      url: 'https://i.pinimg.com/originals/de/64/80/de64801f0275c1ab2ea5a9e2bb3ce7bc.jpg',
     },
   ];
 
@@ -85,10 +109,44 @@ export default function CaptionCarousel() {
         href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css'
       />
       <Slider {...settings}>
-        {cards.map((card, index) => (
-          <Box key={index} text-align='center' overflow={'hidden'}>
-            <Box maxH={'600px'} w={'full'} mx={'auto'} />
-          </Box>
+        {cards.map((item, index) => (
+          <Center p={'0.5rem'} bgColor={'attire.2'}>
+            <Center
+              key={index}
+              overflow={'hidden'}
+              maxW={['14rem', '26rem', '30rem']}
+              h={('20rem', '22rem')}
+              bg={'white'}
+            >
+              <Center
+                position={'absolute'}
+                zIndex={'0'}
+                w={'10rem'}
+                h={'10rem'}
+                transform={'translateY(-30px)'}
+              >
+                <ImQuotesLeft size={'20rem'} color='#F2F2F2' />
+              </Center>
+              <VStack m={{ base: '1rem', lg: '2rem' }} zIndex={'2'}>
+                <Avatar name={item.name} src={item.url} m={['1rem', '2rem']} />
+                <Text
+                  textColor={'attire.2'}
+                  textAlign={'center'}
+                  fontSize={{ base: 'xs', lg: 'md' }}
+                  h={'6rem'}
+                >
+                  "{item.body}"
+                </Text>
+                <Heading
+                  fontSize={{ base: 'sm', lg: 'lg' }}
+                  py={'1rem'}
+                  textColor={'attire.2'}
+                >
+                  {item.name}
+                </Heading>
+              </VStack>
+            </Center>
+          </Center>
         ))}
       </Slider>
     </Box>

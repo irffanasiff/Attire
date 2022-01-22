@@ -11,6 +11,7 @@ import ContactUS from './pages/ContactUS';
 import PriceList from './pages/PriceList';
 import BookCollection from './pages/BookCollection';
 import Terms from './pages/Terms';
+import NotFound from './pages/NotFound';
 
 export const newTheme = {
   ...theme,
@@ -30,6 +31,7 @@ function App() {
         <Route path='/contact' element={<ContactUS />} />
         <Route path='/book-collection' element={<BookCollection />} />
         <Route path='/terms' element={<Terms />} />
+        <Route component={<NotFound />} />
 
         {/* <Route path='/home' element={<Navigate replace to='/' />} />
         <Route path='/contact-us' element={<Contact />} /> */}

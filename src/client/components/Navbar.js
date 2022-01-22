@@ -28,7 +28,7 @@ const NavBar = (props) => {
         position={'absolute'}
         top={'0'}
       >
-        <Logo w='100px' color={'attire.300'} />
+        <Logo width='3rem' />
         <MenuToggle toggle={toggle} isOpen={isOpen} />
         <MenuLinks isOpen={isOpen} />
       </Flex>
