@@ -31,7 +31,7 @@ const NavBar = (props) => {
       >
         <Logo />
         <MenuToggle toggle={toggle} isOpen={isOpen} />
-        <MenuLinks isOpen={isOpen} />
+        <MenuLinks isOpen={isOpen} toggle={toggle} />
       </Flex>
     </Center>
   );
@@ -68,8 +68,10 @@ const MenuToggle = ({ toggle, isOpen }) => {
 };
 
 const MenuItem = ({ navigateTo, children, ...rest }) => {
+  console.log(rest);
+
   return (
-    <Link to={navigateTo}>
+    <Link to={navigateTo} onClick={rest.toggle}>
       <Text
         _active={{ borderBottom: '1px solid white' }}
         display='block'
@@ -82,7 +84,7 @@ const MenuItem = ({ navigateTo, children, ...rest }) => {
   );
 };
 
-const MenuLinks = ({ isOpen }) => {
+const MenuLinks = ({ isOpen, ...rest }) => {
   const navigate = useNavigate();
 
   const whenClickedFunction = () => {
@@ -101,11 +103,19 @@ const MenuLinks = ({ isOpen }) => {
         direction={['column', 'column', 'column', 'row']}
         pt={[4, 4, 0, 0]}
       >
-        <MenuItem navigateTo='/'>Home</MenuItem>
-        <MenuItem navigateTo='/price-list'>Price List </MenuItem>
-        <MenuItem navigateTo='/about'>About </MenuItem>
-        <MenuItem navigateTo='/contact'>Contact </MenuItem>
-        <MenuItem navigateTo='/book-collection' isLast>
+        <MenuItem navigateTo='/' {...rest}>
+          Home
+        </MenuItem>
+        <MenuItem navigateTo='/price-list' {...rest}>
+          Price List{' '}
+        </MenuItem>
+        <MenuItem navigateTo='/about' {...rest}>
+          About{' '}
+        </MenuItem>
+        <MenuItem navigateTo='/contact' {...rest}>
+          Contact{' '}
+        </MenuItem>
+        <MenuItem navigateTo='/book-collection' {...rest}>
           <Flex border={['2px solid white', '2px solid white', 'none']}>
             <Button
               title='Book Collection'
