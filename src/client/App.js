@@ -1,6 +1,6 @@
 import React from 'react';
-import { Routes, Route, Link, Navigate } from 'react-router-dom';
-import { Flex, ChakraProvider } from '@chakra-ui/react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
 
 import Navbar from './components/Navbar';
 import { Footer } from './components/Footer/Footer';
@@ -32,9 +32,6 @@ function App() {
         <Route path='/book-collection' element={<BookCollection />} />
         <Route path='/terms' element={<Terms />} />
         <Route component={<NotFound />} />
-
-        {/* <Route path='/home' element={<Navigate replace to='/' />} />
-        <Route path='/contact-us' element={<Contact />} /> */}
       </Routes>
       <Footer />
     </ChakraProvider>
