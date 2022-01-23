@@ -6,7 +6,7 @@ const Layout = (props) => {
     <Center>
       <Box>
         <Box
-          width={'100vw'}
+          width={'100%'}
           height={['30vh', '40vh', '40vh', '40vh']}
           bgGradient={'linear(to-b, rgba(255, 255, 255, 0),rgba(0,0,0))'}
           position={'absolute'}

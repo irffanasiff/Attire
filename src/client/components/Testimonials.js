@@ -12,9 +12,10 @@ import {
 } from '@chakra-ui/react';
 import Slider from 'react-slick';
 import { ImQuotesLeft } from 'react-icons/im';
+import '../styles/slick.css';
 
 const settings = {
-  dots: true,
+  dots: false,
   autoScroll: true,
   autoplay: true,
   autoplaySpeed: 2000,
@@ -29,36 +30,35 @@ const settings = {
       breakpoint: 1024,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 3,
-        autoplay: true,
+        slidesToScroll: 1,
+        centerMode: true,
+        // autoplay: true,
         autoplaySpeed: 2000,
         infinite: true,
-        infinite: true,
-        centerMode: true,
-        dots: true,
+        //dots: false,
       },
     },
     {
       breakpoint: 600,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 2,
-        autoplay: true,
+        slidesToScroll: 1,
+        centerMode: true,
+        //  autoplay: true,
         autoplaySpeed: 2000,
         infinite: true,
-        centerMode: true,
-        initialSlide: 2,
+        //initialSlide: 2,
       },
     },
     {
       breakpoint: 480,
       settings: {
         slidesToShow: 1,
+        slidesToScroll: 1,
         centerMode: true,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 2000,
         infinite: true,
-        slidesToScroll: 1,
       },
     },
   ],
@@ -92,9 +92,9 @@ export default function CaptionCarousel() {
     <Box
       position={'relative'}
       height={['400px', '440px', '600px']}
-      width={'100vw'}
+      width={'99vw'}
       overflow={'hidden'}
-      mt={['64px', '64px', '93px']}
+      mt={['64px', '64px', '80px']}
     >
       {/* CSS files for react-slick */}
       <link
@@ -110,37 +110,44 @@ export default function CaptionCarousel() {
       />
       <Slider {...settings}>
         {cards.map((item, index) => (
-          <Center p={'0.5rem'} bgColor={'attire.2'}>
+          <Center p={'0.5rem'} bgColor={'attire.1'}>
             <Center
               key={index}
               overflow={'hidden'}
-              maxW={['14rem', '26rem', '30rem']}
-              h={('20rem', '22rem')}
-              bg={'white'}
+              maxW={['70vw', '40vw', '30vw']}
+              bg={'attire.2'}
             >
               <Center
                 position={'absolute'}
                 zIndex={'0'}
-                w={'10rem'}
-                h={'10rem'}
+                w={['5rem', '10rem']}
+                h={['5rem', '10rem']}
                 transform={'translateY(-30px)'}
               >
-                <ImQuotesLeft size={'20rem'} color='#F2F2F2' />
+                <ImQuotesLeft
+                  size={'20rem'}
+                  color='rgb(255, 255, 255,  0.08)'
+                />
               </Center>
               <VStack m={{ base: '1rem', lg: '2rem' }} zIndex={'2'}>
-                <Avatar name={item.name} src={item.url} m={['1rem', '2rem']} />
+                <Avatar
+                  name={item.name}
+                  src={item.url}
+                  m={['1rem', '2rem']}
+                  size={'lg'}
+                />
                 <Text
-                  textColor={'attire.2'}
+                  textColor={'attire.1'}
                   textAlign={'center'}
-                  fontSize={{ base: 'xs', lg: 'md' }}
-                  h={'6rem'}
+                  fontSize={{ base: '10px', lg: 'md' }}
+                  h={{ base: '5rem', lg: '6.5rem' }}
                 >
                   "{item.body}"
                 </Text>
                 <Heading
-                  fontSize={{ base: 'sm', lg: 'lg' }}
+                  fontSize={{ base: 'xs', lg: 'lg' }}
                   py={'1rem'}
-                  textColor={'attire.2'}
+                  textColor={'attire.1'}
                 >
                   {item.name}
                 </Heading>

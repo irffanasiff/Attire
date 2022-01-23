@@ -68,10 +68,8 @@ const MenuToggle = ({ toggle, isOpen }) => {
 };
 
 const MenuItem = ({ navigateTo, children, ...rest }) => {
-  console.log(rest);
-
   return (
-    <Link to={navigateTo} onClick={rest.toggle}>
+    <Link to={navigateTo}>
       <Text
         _active={{ borderBottom: '1px solid white' }}
         display='block'

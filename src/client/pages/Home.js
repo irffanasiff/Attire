@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Box,
   Image,
@@ -17,10 +17,11 @@ import heroImage from '../../../public/heroImage.png';
 import Services from '../components/Services';
 import Testimonials from '../components/Testimonials';
 import Location from '../components/Location';
+import FAQ from '../components/FAQ';
 
 const squareVariants = {
-  initial: { scale: 1, transition: { type: 'tween', duration: 0.5 } },
-  visible: { scale: 1.25, transition: { duration: 0.5 } },
+  initial: { scale: 1, transition: { type: 'tween', duration: 0.4 } },
+  visible: { scale: 1.24, transition: { duration: 0.4 } },
 };
 
 const MotionFlex = motion(Flex);
@@ -29,7 +30,10 @@ var i = 1;
 
 function Home() {
   const [newName, setnewName] = useState('Dry Clean');
+  const [dynamicHeight, setDynamicHeight] = useState(boxHeight + 'px');
   const navigate = useNavigate();
+
+  const boxHeight = useRef();
 
   const controls = useAnimation();
   const { ref, inView, entry } = useInView({
@@ -51,7 +55,9 @@ function Home() {
 
   //useEffect for transition
   useEffect(() => {
-    console.log(inView, entry);
+    const newHeight = boxHeight.current.clientHeight;
+    setDynamicHeight(newHeight + 'px');
+
     if (!inView) {
       controls.start('visible');
     }
@@ -73,7 +79,7 @@ function Home() {
       <Center>
         <Box>
           <Box
-            width={'100vw'}
+            width={'100%'}
             height={['100vw', '80vw', '80vw', '50vw']}
             bgGradient={
               'linear(to-b, rgba(255, 255, 255, 0),rgba(98, 99, 101, 1))'
@@ -92,6 +98,7 @@ function Home() {
         </Box>
         <VStack position='absolute' top={['15vh', '15vh', '20vh']} w={'100%'}>
           <Text
+            ref={ref}
             color={'attire.1'}
             fontSize={['5xl', '6xl', '7xl', '8xl']}
             fontWeight='bold'
@@ -101,7 +108,7 @@ function Home() {
           >
             {newName}
           </Text>
-          <Stack direction={['column', 'row']} my={[4, 8]} ref={ref}>
+          <Stack direction={['column', 'row']} my={[4, 8]}>
             <Button
               title='Book Collection'
               varient='primary'
@@ -117,6 +124,7 @@ function Home() {
       </Center>
       <Center>
         <MotionFlex
+          ref={boxHeight}
           initial={{ y: '100vh' }}
           animate={{ y: 0 }}
           animate={controls}
@@ -133,25 +141,28 @@ function Home() {
         >
           <Services />
         </MotionFlex>
+
         <Center
-          //backgroundColor={'green.200'}
-          mt={{ base: '2000px', sm: '2200px', lg: '1400px', xl: '900px' }}
+          bg='white'
+          mt={`calc(${dynamicHeight}*0.7)`}
+          w={'100%'}
           flexDirection={'column'}
+          py={{ base: '800px', sm: '900px', md: '800px', xl: '30px' }}
         >
           <Text
             fontWeight={'500'}
-            fontSize={['xl', '2xl', '3xl']}
-            textColor={'white'}
+            fontSize={['2xl', '3xl', '5xl']}
+            textColor={'attire.2'}
             mt={['1rem', '2rem']}
             mx={'2rem'}
             textAlign={'center'}
           >
-            What people are saying about Us.
+            Testimonials
           </Text>
           <Text
             fontWeight={'300'}
-            fontSize={['sm', 'md', 'lg']}
-            textColor={'white'}
+            fontSize={['md', 'lg', 'xl']}
+            textColor={'attire.2'}
             my={['1rem', '2rem']}
             mx={'2rem'}
             textAlign={'center'}
@@ -159,6 +170,9 @@ function Home() {
             Dont take our words for it, here's what others have to say.
           </Text>
           <Testimonials />
+          <Center>
+            <FAQ />
+          </Center>
           <Center>
             <Location />
           </Center>

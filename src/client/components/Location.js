@@ -14,21 +14,52 @@ import map from '../../../public/map.png';
 
 const Location = () => {
   return (
-    <Center
-      flexDir={{ base: 'column-reverse', lg: 'row' }}
-      textColor={'attire.2'}
-      bg={'white'}
-      alignItems={'start'}
-    >
-      <VStack alignItems='start' m={'2rem'} gap={'1rem'}>
-        <Text fontSize='xl'>AREAS WE COVER</Text>
-        <Text fontSize='md' maxW={['70vw', '60vw', '40', '20vw']}>
-          Currently we only service the E1; E2; E3; E8 & E9 Areas
+    <VStack my={'5rem'}>
+      <Center flexDirection={'column'} mb={['2rem', '3rem']}>
+        <Text
+          fontWeight={'500'}
+          fontSize={['2xl', '3xl', '5xl']}
+          textColor={'attire.2'}
+          mt={['1rem', '2rem']}
+          mx={'2rem'}
+          textAlign={'center'}
+        >
+          Our Location
         </Text>
-        <Button varient='primary' title='Book collection' />
-      </VStack>
-      <Image src={map} maxW={['90vw', '90vw', '50vw']} h={'auto'} />
-    </Center>
+        <Text
+          fontSize={['md', 'lg', 'xl']}
+          textColor={'attire.2'}
+          my={['1rem', '2rem']}
+          mx={'2rem'}
+          textAlign={'center'}
+        >
+          Areas We Serve
+        </Text>
+      </Center>
+      <Center
+        flexDir={{ base: 'column-reverse', lg: 'row' }}
+        textColor={'attire.2'}
+        bg={'white'}
+        alignItems={'start'}
+        w={{ base: '', lg: '' }}
+        border={'2px solid gray'}
+        my={'5rem'}
+      >
+        <VStack
+          alignItems='start'
+          m={'2rem'}
+          gap={'1rem'}
+          py={['0rem', '1rem', '4rem']}
+        >
+          <Text fontSize='xl'>AREAS WE COVER</Text>
+          <Text fontSize='md' maxW={['70vw', '60vw', '40vw', '20vw']}>
+            Currently we only service the E1; E2; E3; E8 & E9 Areas
+          </Text>
+          <Button varient='primary' title='Book collection' />
+        </VStack>
+        <Image src={map} maxW={['90vw', '90vw', '50vw']} h={'auto'} />
+      </Center>
+    </VStack>
   );
 };
 
