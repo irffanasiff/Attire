@@ -65,6 +65,7 @@ const FAQ = () => {
                 minH={['10rem', '20rem', '25rem']}
               >
                 <AccordionItem
+                  borderColor={'transparent'}
                   borderBottom={'1px solid gray'}
                   pb={'0.5rem'}
                   mb={'1rem'}
@@ -95,6 +96,7 @@ const FAQ = () => {
                   </AccordionPanel>
                 </AccordionItem>
                 <AccordionItem
+                  borderColor={'transparent'}
                   borderBottom={'1px solid gray'}
                   pb={'0.5rem'}
                   mb={'1rem'}
@@ -126,75 +128,7 @@ const FAQ = () => {
                   </AccordionPanel>
                 </AccordionItem>
                 <AccordionItem
-                  borderBottom={'1px solid gray'}
-                  pb={'0.5rem'}
-                  mb={'1rem'}
-                >
-                  <h2>
-                    <AccordionButton h={'4rem'}>
-                      <Box
-                        flex='1'
-                        textAlign='left'
-                        fontSize={['sm', 'md', 'lg']}
-                      >
-                        Section 2 title
-                      </Box>
-                      <AccordionIcon />
-                    </AccordionButton>
-                  </h2>
-                  <AccordionPanel pb={4}>
-                    <Text
-                      fontWeight={'300'}
-                      fontSize={['xs', 'sm', 'md']}
-                      fontSize={['xs', 'md']}
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </Text>
-                  </AccordionPanel>
-                </AccordionItem>
-              </Accordion>
-            </TabPanel>
-            <TabPanel>
-              <Accordion
-                allowMultiple
-                w={['90vw', '70vw', '50vw']}
-                minH={['10rem', '20rem', '25rem']}
-              >
-                <AccordionItem
-                  borderBottom={'1px solid gray'}
-                  pb={'0.5rem'}
-                  mb={'1rem'}
-                >
-                  <h2>
-                    <AccordionButton h={'4rem'}>
-                      <Box
-                        flex='1'
-                        textAlign='left'
-                        fontSize={['sm', 'md', 'lg']}
-                      >
-                        What makes you different than other laundry service
-                        providers in the area?
-                      </Box>
-                      <AccordionIcon />
-                    </AccordionButton>
-                  </h2>
-                  <AccordionPanel pb={4}>
-                    <Text
-                      fontWeight={'300'}
-                      fontSize={['xs', 'sm', 'md']}
-                      fontSize={['xs', 'md']}
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </Text>
-                  </AccordionPanel>
-                </AccordionItem>
-                <AccordionItem
+                  borderColor={'transparent'}
                   borderBottom={'1px solid gray'}
                   pb={'0.5rem'}
                   mb={'1rem'}
@@ -233,6 +167,7 @@ const FAQ = () => {
                 minH={['10rem', '20rem', '25rem']}
               >
                 <AccordionItem
+                  borderColor={'transparent'}
                   borderBottom={'1px solid gray'}
                   pb={'0.5rem'}
                   mb={'1rem'}
@@ -264,6 +199,46 @@ const FAQ = () => {
                   </AccordionPanel>
                 </AccordionItem>
                 <AccordionItem
+                  borderColor={'transparent'}
+                  borderBottom={'1px solid gray'}
+                  pb={'0.5rem'}
+                  mb={'1rem'}
+                >
+                  <h2>
+                    <AccordionButton h={'4rem'}>
+                      <Box
+                        flex='1'
+                        textAlign='left'
+                        fontSize={['sm', 'md', 'lg']}
+                      >
+                        Section 2 title
+                      </Box>
+                      <AccordionIcon />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4}>
+                    <Text
+                      fontWeight={'300'}
+                      fontSize={['xs', 'sm', 'md']}
+                      fontSize={['xs', 'md']}
+                    >
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </Text>
+                  </AccordionPanel>
+                </AccordionItem>
+              </Accordion>
+            </TabPanel>
+            <TabPanel>
+              <Accordion
+                allowMultiple
+                w={['90vw', '70vw', '50vw']}
+                minH={['10rem', '20rem', '25rem']}
+              >
+                <AccordionItem
+                  borderColor={'transparent'}
                   borderBottom={'1px solid gray'}
                   pb={'0.5rem'}
                   mb={'1rem'}
@@ -295,6 +270,39 @@ const FAQ = () => {
                   </AccordionPanel>
                 </AccordionItem>
                 <AccordionItem
+                  borderColor={'transparent'}
+                  borderBottom={'1px solid gray'}
+                  pb={'0.5rem'}
+                  mb={'1rem'}
+                >
+                  <h2>
+                    <AccordionButton h={'4rem'}>
+                      <Box
+                        flex='1'
+                        textAlign='left'
+                        fontSize={['sm', 'md', 'lg']}
+                      >
+                        What makes you different than other laundry service
+                        providers in the area?
+                      </Box>
+                      <AccordionIcon />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4}>
+                    <Text
+                      fontWeight={'300'}
+                      fontSize={['xs', 'sm', 'md']}
+                      fontSize={['xs', 'md']}
+                    >
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </Text>
+                  </AccordionPanel>
+                </AccordionItem>
+                <AccordionItem
+                  borderColor={'transparent'}
                   borderBottom={'1px solid gray'}
                   pb={'0.5rem'}
                   mb={'1rem'}
