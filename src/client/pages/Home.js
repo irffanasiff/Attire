@@ -147,7 +147,7 @@ function Home() {
           mt={`calc(${dynamicHeight}*0.7)`}
           w={'100%'}
           flexDirection={'column'}
-          py={{ base: '800px', sm: '900px', md: '800px', xl: '30px' }}
+          pt={{ base: '800px', sm: '900px', md: '800px', xl: '30px' }}
         >
           <Text
             fontWeight={'500'}

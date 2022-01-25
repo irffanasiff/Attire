@@ -1,6 +1,6 @@
 import { extendTheme } from '@chakra-ui/react';
 //import '@fontsource/poppins';
-// 2. Add your color mode config
+
 const config = {
   initialColorMode: 'light',
   useSystemColorMode: false,
@@ -22,6 +22,7 @@ const theme = extendTheme({
   styles: {
     global: {
       'html, body': {
+        // fontFamily: 'sans',
         background: '#626365',
         color: '#626365',
       },

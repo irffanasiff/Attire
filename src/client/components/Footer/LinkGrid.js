@@ -1,5 +1,6 @@
-import { Box, Link, SimpleGrid, Stack } from '@chakra-ui/react';
+import { Box, SimpleGrid, Stack } from '@chakra-ui/react';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { FooterHeading } from './FooterHeading';
 
 export const LinkGrid = (props) => (
@@ -9,8 +10,24 @@ export const LinkGrid = (props) => (
         Service
       </FooterHeading>
       <Stack w='fit-content'>
-        <Link fontSize={{ base: 'sm', xl: 'xl' }}>Pricing</Link>
-        <Link fontSize={{ base: 'sm', xl: 'xl' }}>Book Service</Link>
+        <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/price-list'>
+          Dry Cleaning
+        </Link>
+        <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/price-list'>
+          Shirt Service
+        </Link>
+        <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/price-list'>
+          Wash & Press
+        </Link>
+        <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/price-list'>
+          Ironing{' '}
+        </Link>
+        <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/price-list'>
+          Household cleaning
+        </Link>
+        <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/price-list'>
+          Repairs & Alterations
+        </Link>
       </Stack>
     </Box>
     <Box mx={'auto'} w='fit-content'>
@@ -18,9 +35,15 @@ export const LinkGrid = (props) => (
         About
       </FooterHeading>
       <Stack w='fit-content'>
-        <Link fontSize={{ base: 'sm', xl: 'xl' }}>About us</Link>
-        <Link fontSize={{ base: 'sm', xl: 'xl' }}>Contact</Link>
-        <Link fontSize={{ base: 'sm', xl: 'xl' }}>Terms</Link>
+        <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/about'>
+          About us
+        </Link>
+        <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/contactt'>
+          Contact
+        </Link>
+        <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/terms'>
+          Terms
+        </Link>
       </Stack>
     </Box>
   </SimpleGrid>

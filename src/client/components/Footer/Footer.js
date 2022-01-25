@@ -1,4 +1,4 @@
-import { Box, Stack, StackDivider, Text } from '@chakra-ui/react';
+import { Box, Flex, Stack, StackDivider, Text } from '@chakra-ui/react';
 import React from 'react';
 import ContactDetails from '../ContactDetails';
 import Logo from '../Logo';
@@ -37,10 +37,12 @@ export const Footer = () => (
           spacing={{ base: '10', md: '20' }}
         >
           <LinkGrid spacing={{ base: '10', md: '20', lg: '28' }} flex='1' />
-          <ContactDetails
-            width={{ base: 'full', md: 'sm' }}
-            textcolor='white'
-          />
+          <Flex flexDirection={'column'} justifyContent={'flex-start'}>
+            <ContactDetails
+              width={{ base: 'full', md: 'sm' }}
+              textcolor='white'
+            />
+          </Flex>
         </Stack>
       </Stack>
       <Stack

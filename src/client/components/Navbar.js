@@ -1,11 +1,19 @@
 import React from 'react';
-import { Box, Flex, Text, Stack, Center } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Text,
+  Stack,
+  Center,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import Logo from './Logo';
 import Button from './HOC/Button.HOC';
 import { Link, NavigationType, useNavigate } from 'react-router-dom';
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isSmallScreen] = useMediaQuery('(max-width: 991px)');
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -22,7 +30,7 @@ const NavBar = (props) => {
         p={['4', '8']}
         bg={'transparent'}
         color={'white'}
-        bg={isOpen ? 'attire.2' : 'transparent'}
+        bg={isOpen && isSmallScreen ? 'attire.2' : 'transparent'}
         alignSelf={'center'}
         zIndex={100}
         mx={'auto'}
@@ -67,9 +75,9 @@ const MenuToggle = ({ toggle, isOpen }) => {
   );
 };
 
-const MenuItem = ({ navigateTo, children, ...rest }) => {
+const MenuItem = ({ navigateTo, children, toggle, ...rest }) => {
   return (
-    <Link to={navigateTo}>
+    <Link to={navigateTo} onClick={toggle}>
       <Text
         _active={{ borderBottom: '1px solid white' }}
         display='block'
@@ -88,6 +96,7 @@ const MenuLinks = ({ isOpen, ...rest }) => {
   const whenClickedFunction = () => {
     navigate('/book-collection');
   };
+
   return (
     <Box
       display={{ base: isOpen ? 'block' : 'none', lg: 'block' }}
@@ -125,7 +134,24 @@ const MenuLinks = ({ isOpen, ...rest }) => {
           </Flex>
         </MenuItem>
         <Center display={{ base: 'flex', lg: 'none' }}>
-          <Box w={'200px'} h={'200px'} backgroundColor={'attire.1'} />
+          <Box w={'200px'} h={'200px'} backgroundColor={'attire.2'}>
+            <Center
+              alignSelf={'baseline'}
+              flexDirection={'column'}
+              py={'0.5rem'}
+              mt={'8rem'}
+              gap={'1rem'}
+            >
+              <Logo />
+              <Link
+                to='/terms'
+                fontSize='sx'
+                onClick={() => setIsOpen == false}
+              >
+                Terms and Conditions
+              </Link>
+            </Center>
+          </Box>
         </Center>
       </Stack>
     </Box>
