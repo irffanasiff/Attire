@@ -18,7 +18,13 @@ const NavBar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Center w={'100%'} overflow={{ base: 'hidden', lg: 'visible' }}>
+    <Center
+      position={isSmallScreen && isOpen && 'fixed'}
+      h={isSmallScreen && isOpen && '100%'}
+      zIndex={isSmallScreen && isOpen && '10'}
+      w={'100%'}
+      overflow={{ base: 'hidden', lg: 'visible' }}
+    >
       <Flex
         as='nav'
         align='center'

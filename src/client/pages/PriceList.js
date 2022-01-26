@@ -1,7 +1,6 @@
 import {
   Center,
   Flex,
-  Img,
   Text,
   VStack,
   HStack,
@@ -17,32 +16,30 @@ import {
   Icon,
   Image,
   Heading,
+  List,
+  OrderedList,
 } from '@chakra-ui/react';
 import React from 'react';
 import Layout from '../components/HOC/Layout.HOC';
 import { ratelistData } from './pricelistData';
-import {
-  MdOutlineIron,
-  MdOutlineDryCleaning,
-  MdOutlineOtherHouses,
-  MdOutlineLocalLaundryService,
-} from 'react-icons/md';
-import { RiShirtLine } from 'react-icons/ri';
-import { CgSmartHomeWashMachine } from 'react-icons/cg';
-import { GiSewingNeedle } from 'react-icons/gi';
 import { motion } from 'framer-motion';
+import { Offers as offersData } from './Offers';
 
 const motionHStack = motion(HStack);
 
 const PriceList = () => {
-  console.log(ratelistData[6].items[0].categoryItems[0]);
   return (
     <>
       <Layout
         img='https://images.unsplash.com/photo-1629582626803-26d116398eea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80'
-        title='Price List'
+        title='Price List & Offers'
       />
-      <Center w={'full'} padding={'4'} backgroundColor={'attire.1'}>
+      <Center
+        w={'full'}
+        padding={'4'}
+        backgroundColor={'attire.1'}
+        pb={'10rem'}
+      >
         <VStack textColor={'black'} alignItems={'center'}>
           <Text
             fontWeight={'600'}
@@ -51,7 +48,39 @@ const PriceList = () => {
             my={['0', '1rem', '3rem']}
             textAlign={'center'}
           >
-            List
+            Offers ✨
+          </Text>
+          <List w={'100%'}>
+            {offersData.map((item) => (
+              <ListItem
+                border={'1px solid black'}
+                w={'100%'}
+                p={'2rem'}
+                mb={'1rem'}
+                alignItems={'center'}
+                flex={'1'}
+                flexDir={'column'}
+              >
+                <HStack justify={'space-between'}>
+                  <Text fontSize={['lg', 'lg', 'xl']} fontWeight={'500'}>
+                    {item.title}
+                  </Text>
+                  <Text textColor={'yellow.600'} fontSize={['xl', '2xl']}>
+                    {item.price}
+                  </Text>
+                </HStack>
+              </ListItem>
+            ))}
+          </List>
+          <Text
+            fontWeight={'600'}
+            fontSize={['xl', '2xl', '4xl']}
+            w={'full'}
+            my={['0', '1rem', '3rem']}
+            textAlign={'center'}
+            pt={'5rem'}
+          >
+            Price List
           </Text>
           <Accordion
             allowMultiple
@@ -79,12 +108,11 @@ const PriceList = () => {
                 >
                   <HStack>
                     <Center
-                      w={['1.4rem', '2rem', '3rem']}
-                      h={['1.4rem', '2rem', '3rem']}
+                      w={['1rem', '1.5rem', '2rem']}
+                      h={['1rem', '1.5rem', '2rem']}
                       mr={['0', '1rem', '2rem']}
                     >
-                      {/*  {item.icon} */}
-                      Icon
+                      <Image src={item.icon} />
                     </Center>
                     <Text textAlign='left' fontSize={['sm', 'lg', 'xl']}>
                       {item.title}

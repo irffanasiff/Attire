@@ -2,7 +2,7 @@ export const ratelistData = [
   {
     id: '1',
     title: 'Dry Cleaning List',
-    icon: './SVG/clothes.svg',
+    icon: 'https://img.icons8.com/ios/2x/washing.png',
     subItems: false,
     items: [
       {
@@ -66,7 +66,7 @@ export const ratelistData = [
   {
     id: '2',
     title: 'Shirt Service',
-    icon: 'RiShirtLine',
+    icon: 'https://img.icons8.com/ios/2x/shirt.png',
     subItems: false,
     items: [
       {
@@ -78,7 +78,7 @@ export const ratelistData = [
   {
     id: '3',
     title: 'Wash & Press',
-    icon: 'MdOutlineLocalLaundryService',
+    icon: 'https://img.icons8.com/ios/2x/laundry-bag.png',
     subItems: false,
     items: [
       {
@@ -90,7 +90,7 @@ export const ratelistData = [
   {
     id: '4',
     title: 'Ironing Only',
-    icon: 'MdOutlineIron',
+    icon: 'https://img.icons8.com/ios/2x/ironing.png',
     subItems: false,
     items: [
       {
@@ -102,7 +102,7 @@ export const ratelistData = [
   {
     id: '5',
     title: 'Household cleaning price',
-    logo: 'MdOutlineOtherHouses,',
+    icon: 'https://img.icons8.com/ios/2x/cleaning-a-surface.png',
     subItems: false,
     items: [
       {
@@ -150,7 +150,7 @@ export const ratelistData = [
   {
     id: '6',
     title: 'Household Iron Only',
-    icon: 'MdOutlineDryCleaning',
+    icon: 'https://img.icons8.com/ios/2x/iron-medium-temperature.png',
     subItems: false,
     items: [
       {
@@ -222,7 +222,7 @@ export const ratelistData = [
   {
     id: '7',
     title: 'Repairs & Alterations',
-    icon: 'GiSewingNeedle',
+    icon: 'https://img.icons8.com/ios/2x/sewing-machine.png',
     subItems: true,
     items: [
       {

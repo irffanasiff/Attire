@@ -9,7 +9,6 @@ import {
   Input,
   Button,
   Textarea,
-  Select,
   useDisclosure,
   ModalOverlay,
   ModalContent,
@@ -18,7 +17,6 @@ import {
   ModalHeader,
   ModalCloseButton,
   Heading,
-  Container,
 } from '@chakra-ui/react';
 import React from 'react';
 

@@ -1,4 +1,4 @@
-import { HStack, Icon, Text, VStack } from '@chakra-ui/react';
+import { HStack, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { BsTelephone } from 'react-icons/bs';

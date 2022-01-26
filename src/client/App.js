@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 
 import Navbar from './components/Navbar';
 import { Footer } from './components/Footer/Footer';
@@ -12,6 +12,7 @@ import PriceList from './pages/PriceList';
 import BookCollection from './pages/BookCollection';
 import Terms from './pages/Terms';
 import NotFound from './pages/NotFound';
+import Offers from './components/Offers';
 
 export const newTheme = {
   ...theme,

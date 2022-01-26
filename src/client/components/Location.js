@@ -1,16 +1,8 @@
-import {
-  Box,
-  Center,
-  Flex,
-  HStack,
-  Image,
-  Stack,
-  VStack,
-  Text,
-} from '@chakra-ui/react';
+import { Center, Image, VStack, Text } from '@chakra-ui/react';
 import React from 'react';
 import Button from './HOC/Button.HOC';
-import map from '../../../public/map.png';
+import map from '../../../public/map.jpg';
+import { Link } from 'react-router-dom';
 
 const Location = () => {
   return (
@@ -55,7 +47,9 @@ const Location = () => {
           <Text fontSize='md' maxW={['70vw', '60vw', '40vw', '20vw']}>
             Currently we only service the E1; E2; E3; E8 & E9 Areas
           </Text>
-          <Button varient='primary' title='Book collection' />
+          <Link to='/book-collection'>
+            <Button varient='primary' title='Book collection' />
+          </Link>
         </VStack>
         <Image src={map} maxW={['90vw', '90vw', '50vw']} h={'auto'} />
       </Center>

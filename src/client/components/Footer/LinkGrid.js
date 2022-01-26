@@ -38,7 +38,7 @@ export const LinkGrid = (props) => (
         <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/about'>
           About us
         </Link>
-        <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/contactt'>
+        <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/contact'>
           Contact
         </Link>
         <Link fontSize={{ base: 'sm', xl: 'xl' }} to='/terms'>

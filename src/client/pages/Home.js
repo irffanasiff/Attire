@@ -7,17 +7,17 @@ import {
   VStack,
   Stack,
   Flex,
-  HStack,
 } from '@chakra-ui/react';
 import Button from '../components/HOC/Button.HOC';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useNavigate } from 'react-router-dom';
-import heroImage from '../../../public/heroImage.png';
+import heroImage from '../../../public/Hero.jpg';
 import Services from '../components/Services';
 import Testimonials from '../components/Testimonials';
 import Location from '../components/Location';
 import FAQ from '../components/FAQ';
+import Offers from '../components/Offers';
 
 const squareVariants = {
   initial: { scale: 1, transition: { type: 'tween', duration: 0.4 } },
@@ -76,6 +76,8 @@ function Home() {
 
   return (
     <>
+      <Offers />
+
       <Center>
         <Box>
           <Box
@@ -88,7 +90,7 @@ function Home() {
             top={'0'}
           ></Box>
           <Image
-            src='https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+            src={heroImage}
             alt='Alternate Text'
             width={'100vw'}
             height={['100vw', '80vw', '80vw', '50vw']}

@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Heading,
-  Stack,
-  Image,
-  Text,
-  Avatar,
-  Flex,
-  Center,
-  VStack,
-} from '@chakra-ui/react';
+import { Box, Heading, Text, Avatar, Center, VStack } from '@chakra-ui/react';
 import Slider from 'react-slick';
 import { ImQuotesLeft } from 'react-icons/im';
 import '../styles/slick.css';
@@ -32,10 +22,9 @@ const settings = {
         slidesToShow: 3,
         slidesToScroll: 1,
         centerMode: true,
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 2000,
         infinite: true,
-        //dots: false,
       },
     },
     {
@@ -44,10 +33,9 @@ const settings = {
         slidesToShow: 2,
         slidesToScroll: 1,
         centerMode: true,
-        //  autoplay: true,
+        autoplay: true,
         autoplaySpeed: 2000,
         infinite: true,
-        //initialSlide: 2,
       },
     },
     {
@@ -56,7 +44,7 @@ const settings = {
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 2000,
         infinite: true,
       },

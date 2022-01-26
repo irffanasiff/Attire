@@ -1,14 +1,12 @@
 import { Center, Stack, Text, VStack, HStack } from '@chakra-ui/react';
 import React from 'react';
 import Layout from '../components/HOC/Layout.HOC';
+import aboutImage from '../../../public/About.jpg';
 
 const About = () => {
   return (
     <>
-      <Layout
-        img='https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
-        title='Who we are'
-      />
+      <Layout img={aboutImage} title='Who we are' />
 
       <VStack fontSize={'3xl'}>Hello</VStack>
       <Center w={'full'} padding={'4'} bg={'white'}>

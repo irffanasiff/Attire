@@ -1,11 +1,8 @@
 import {
-  Box,
   Center,
   Container,
   Flex,
   Heading,
-  HStack,
-  Stack,
   Text,
   VStack,
 } from '@chakra-ui/react';
