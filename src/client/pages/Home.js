@@ -25,7 +25,7 @@ const squareVariants = {
 };
 
 const MotionFlex = motion(Flex);
-const names = ['Dry Clean', 'Laundary', 'Tailoring', 'Alteration'];
+const names = ['Dry Cleaning', 'Shirt Service', 'Repairs', 'Alterations'];
 var i = 1;
 
 function Home() {

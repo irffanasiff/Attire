@@ -53,6 +53,10 @@ const PriceList = () => {
           <List w={'100%'}>
             {offersData.map((item) => (
               <ListItem
+                _hover={{
+                  transform: 'scale(1.02)',
+                  transition: '0.2s',
+                }}
                 border={'1px solid black'}
                 w={'100%'}
                 p={'2rem'}

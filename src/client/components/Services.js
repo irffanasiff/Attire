@@ -136,8 +136,9 @@ const Services = () => {
               pb={'1rem'}
               fontWeight={'300'}
             >
-              Working with professional tailors with years of experience we can
-              tailor or alter almost any garment.{' '}
+              Dry cleaning is a process of cleaning clothes with out the use of
+              water instead we use water-free liquid solvent known as ‘perc’
+              (perchloroethylene)
             </Text>
           </VStack>
           <VStack m={{ base: '1rem', xl: '2rem' }} spacing='4'>
@@ -234,8 +235,8 @@ const Services = () => {
               pb={'1rem'}
               fontWeight={'300'}
             >
-              Working with professional tailors with years of experience we can
-              tailor or alter almost any garment.{' '}
+              We can wash, dry and press your clothes. We also offer a wash, dry
+              and fold service aswell.
             </Text>
           </VStack>
           <VStack m={{ base: '1rem', xl: '2rem' }} spacing='4'>
@@ -335,7 +336,7 @@ const Services = () => {
               fontWeight={'500'}
               my={['2rem', '3rem']}
             >
-              Hydrocarbon/ Fur Dry clean
+              Household Items
             </Heading>
             <Text
               maxW='20rem'
@@ -344,8 +345,8 @@ const Services = () => {
               pb={'1rem'}
               fontWeight={'300'}
             >
-              ‘F’ Dry clean can only be done using a petroleum solvent.
-              Petroleum solvent is used instead of water to clean the item.{' '}
+              We can clean all household items such as curtains, duvets, bed
+              sets etc.
             </Text>
           </VStack>
           <VStack m={{ base: '1rem', xl: '2rem' }} spacing='4'>
@@ -453,7 +454,7 @@ const Services = () => {
               fontWeight={'500'}
               my={['1rem', '2rem', '3rem']}
             >
-              Laundry
+              Ironing
             </Heading>
             <Text
               maxW='20rem'
@@ -462,8 +463,8 @@ const Services = () => {
               pb={'1rem'}
               fontWeight={'300'}
             >
-              We do offer general laundry as well. This is a wash and fold
-              service for any items that may need to be laundered.
+              We use our state of the art ironing machines to take all the
+              creases out of the clothes; leaving the clothes fresh and crisp.
             </Text>
           </VStack>
           <VStack m={{ base: '1rem', xl: '2rem' }} spacing='4'>
@@ -547,7 +548,7 @@ const Services = () => {
               fontWeight={'500'}
               my={['2rem', '3rem']}
             >
-              Tailoring / Alterations
+              Shirt Service
             </Heading>
             <Text
               maxW='20rem'
@@ -556,8 +557,9 @@ const Services = () => {
               pb={'1rem'}
               fontWeight={'300'}
             >
-              Working with professional tailors with years of experience we can
-              tailor or alter almost any garment.{' '}
+              We offer the standrad service of washing and pressing shirt. Along
+              with that we can dry clean your shirts, just iron them. We can
+              return them on hangers or even folded.
             </Text>
           </VStack>
           <VStack m={{ base: '1rem', xl: '2rem' }} spacing='4'>
@@ -629,7 +631,7 @@ const Services = () => {
               fontWeight={'500'}
               my={['2rem', '3rem']}
             >
-              Laundry
+              Repair and Alteration
             </Heading>
             <Text
               maxW='20rem'
@@ -638,8 +640,9 @@ const Services = () => {
               pb={'1rem'}
               fontWeight={'300'}
             >
-              ‘F’ Dry clean can only be done using a petroleum solvent.
-              Petroleum solvent is used instead of water to clean the item.{' '}
+              With an on-site Tailor we offer quick turnaround on repairs &
+              altertaion. With almost 20 years of experience our tailor is one
+              of the best in the business.
             </Text>
           </VStack>
         </Flex>

@@ -88,6 +88,7 @@ const MenuItem = ({ navigateTo, children, toggle, ...rest }) => {
         _active={{ borderBottom: '1px solid white' }}
         display='block'
         fontSize={['2xl', '2xl', 'lg']}
+        textShadow={'lg'}
         {...rest}
       >
         {children}
