@@ -31,7 +31,7 @@ const PriceList = () => {
   return (
     <>
       <Layout
-        img='https://images.unsplash.com/photo-1629582626803-26d116398eea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80'
+        img='https://www.rd.com/wp-content/uploads/2021/09/GettyImages-1181334518-MLedit.jpg'
         title='Price List & Offers'
       />
       <Center

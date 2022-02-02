@@ -25,10 +25,9 @@ const About = () => {
               padding={['1rem', '1rem', '2rem', '3rem']}
               maxW={'35rem'}
             >
-              As an upcoming pick up & drop off service in the London area our
-              aim is to bring the dry cleaning/ laundry experience to you. From
-              the comfort of your home, you will be able to book in a collection
-              at a click of a button.
+              With almost 30 years of dry cleaning experince our team aims to
+              provide the best experince possible for our customers. With our
+              expert tailor we make sure each customers is left satisfied.
             </Text>
             <Text
               textAlign={'center'}
@@ -36,9 +35,10 @@ const About = () => {
               padding={['1rem', '1rem', '2rem', '3rem']}
               maxW={'35rem'}
             >
-              Our aim is to bring the Dry-cleaning industry into the 21st
-              century and provide an online service without having to compromise
-              on quality or customer satisfaction.
+              We do all of our cleaning on premises making sure each item gets
+              the proper attention it should have. we are offering a wide range
+              of services such as Leather & Suede Cleaning, curtain Cleaning,
+              Duvet Cleaning.
             </Text>
           </Stack>
           <HStack justifyContent={'space-around'} w={'full'}>
@@ -629,8 +629,9 @@ const About = () => {
                 padding={['1rem', '1rem', '2rem', '3rem']}
                 maxW={'35rem'}
               >
-                Our aim is to bring the Dry-cleaning service to you without
-                having to compromise on quality or customer satisfaction.
+                We have been in the area of Bromley for over 5 years starting
+                off with Eden Park Dry Cleaners in Eden Park and are now looking
+                to provide the best service possible in Hayes.
               </Text>
             </Center>
           </Stack>

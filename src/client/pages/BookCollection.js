@@ -408,9 +408,9 @@ const BookCollection = () => {
                 />
               </FormControl>
               <Box>
-                <Checkbox defaultIsChecked size='lg'>
-                  <Text fontSize={['md', 'lg']} fontWeight={'light'} pl={'5px'}>
-                    Accept Terms and conditions
+                <Checkbox size='lg' {...register('collectFromShop')}>
+                  <Text fontSize={['md', 'lg']} fontWeight={'500'} pl={'5px'}>
+                    I will collect my order from the shop
                   </Text>
                 </Checkbox>
               </Box>

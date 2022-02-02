@@ -18,15 +18,6 @@ const Location = () => {
         >
           Our Location
         </Text>
-        <Text
-          fontSize={['md', 'lg', 'xl']}
-          textColor={'attire.2'}
-          my={['1rem', '2rem']}
-          mx={'2rem'}
-          textAlign={'center'}
-        >
-          Areas We Serve
-        </Text>
       </Center>
       <Center
         flexDir={{ base: 'column-reverse', lg: 'row' }}
@@ -44,8 +35,14 @@ const Location = () => {
           py={['0rem', '1rem', '4rem']}
         >
           <Text fontSize='xl'>AREAS WE COVER</Text>
-          <Text fontSize='md' maxW={['70vw', '60vw', '40vw', '20vw']}>
-            Currently we only service the E1; E2; E3; E8 & E9 Areas
+          <Text
+            fontSize='md'
+            maxW={['70vw', '60vw', '40vw', '20vw']}
+            fontWeight={'400'}
+          >
+            We Provide Our Collection & Delivery Service In All of Bromley and
+            Some Areas in Croydon and Lewisham. Get in contact for more
+            information.
           </Text>
           <Link to='/book-collection'>
             <Button varient='primary' title='Book collection' />

@@ -85,7 +85,16 @@ const MenuItem = ({ navigateTo, children, toggle, ...rest }) => {
   return (
     <Link to={navigateTo} onClick={toggle}>
       <Text
-        _active={{ borderBottom: '1px solid white' }}
+        _active={{
+          textColor: 'attire.2',
+          transform: 'scale(1.02)',
+          transition: '0.3s',
+        }}
+        _hover={{
+          textColor: 'attire.2',
+          transform: 'scale(1.02)',
+          transition: '0.3s',
+        }}
         display='block'
         fontSize={['2xl', '2xl', 'lg']}
         textShadow={'lg'}

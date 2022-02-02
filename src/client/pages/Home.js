@@ -25,7 +25,16 @@ const squareVariants = {
 };
 
 const MotionFlex = motion(Flex);
-const names = ['Dry Cleaning', 'Shirt Service', 'Repairs', 'Alterations'];
+const names = [
+  'Dry Cleaning',
+  'Laundary',
+  'Iron Only',
+  'Shirt Services',
+  'Curtains',
+  'Duvets',
+  'Repairs',
+  'Alterations',
+];
 var i = 1;
 
 function Home() {
@@ -41,7 +50,7 @@ function Home() {
   });
 
   const shuffle = useCallback(() => {
-    const index = i % 4;
+    const index = i % 8;
     i++;
     setnewName(names[index]);
   }, []);

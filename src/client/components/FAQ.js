@@ -52,9 +52,8 @@ const FAQ = () => {
           minH={['10rem', '20rem', '25rem']}
         >
           <TabList w={'fit-content'} mx={'auto'} borderWidth={'0'} py={'2rem'}>
-            <Tab fontSize={['xs', 'lg']}>Dry Clean</Tab>
-            <Tab fontSize={['xs', 'lg']}>Laundary</Tab>
-            <Tab fontSize={['xs', 'lg']}>Home Service</Tab>
+            <Tab fontSize={['xs', 'lg']}>Orders</Tab>
+            <Tab fontSize={['xs', 'lg']}>Service</Tab>
           </TabList>
           <TabPanels p={'0'}>
             <TabPanel p={'0'}>
@@ -77,7 +76,8 @@ const FAQ = () => {
                         textAlign='left'
                         fontSize={['sm', 'md', 'lg']}
                       >
-                        Section 2 title
+                        Is there a shop where I can drop or collect my item(s)
+                        at?
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
@@ -88,10 +88,8 @@ const FAQ = () => {
                       fontSize={['xs', 'sm', 'md']}
                       fontSize={['xs', 'md']}
                     >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Yes, we are located on 34 Station Approach, Br2 7ej,
+                      Hayes.
                     </Text>
                   </AccordionPanel>
                 </AccordionItem>
@@ -108,8 +106,7 @@ const FAQ = () => {
                         textAlign='left'
                         fontSize={['sm', 'md', 'lg']}
                       >
-                        What makes you different than other laundry service
-                        providers in the area?
+                        What happens once I place an order?
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
@@ -120,10 +117,10 @@ const FAQ = () => {
                       fontSize={['xs', 'sm', 'md']}
                       fontSize={['xs', 'md']}
                     >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      A: Once we have received your order we will collect the
+                      item(s) from the address at the date & time you have
+                      selected. After that we clean your item(s) and drop them
+                      back off to you.
                     </Text>
                   </AccordionPanel>
                 </AccordionItem>
@@ -140,7 +137,7 @@ const FAQ = () => {
                         textAlign='left'
                         fontSize={['sm', 'md', 'lg']}
                       >
-                        Section 2 title
+                        How do I pay?
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
@@ -151,10 +148,7 @@ const FAQ = () => {
                       fontSize={['xs', 'sm', 'md']}
                       fontSize={['xs', 'md']}
                     >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      You can pay when we drop off your item(s)
                     </Text>
                   </AccordionPanel>
                 </AccordionItem>
@@ -179,8 +173,8 @@ const FAQ = () => {
                         textAlign='left'
                         fontSize={['sm', 'md', 'lg']}
                       >
-                        What makes you different than other laundry service
-                        providers in the area?
+                        How long do you require for suede, fur & leather
+                        cleaning?
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
@@ -191,10 +185,8 @@ const FAQ = () => {
                       fontSize={['xs', 'sm', 'md']}
                       fontSize={['xs', 'md']}
                     >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      We require a minimum of 5 working days to clean suede, fur
+                      or leather items
                     </Text>
                   </AccordionPanel>
                 </AccordionItem>
@@ -211,7 +203,8 @@ const FAQ = () => {
                         textAlign='left'
                         fontSize={['sm', 'md', 'lg']}
                       >
-                        Section 2 title
+                        How do I let you know any requirements I have for my
+                        order/ items?
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
@@ -222,50 +215,9 @@ const FAQ = () => {
                       fontSize={['xs', 'sm', 'md']}
                       fontSize={['xs', 'md']}
                     >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </Text>
-                  </AccordionPanel>
-                </AccordionItem>
-              </Accordion>
-            </TabPanel>
-            <TabPanel>
-              <Accordion
-                allowMultiple
-                w={['90vw', '70vw', '50vw']}
-                minH={['10rem', '20rem', '25rem']}
-              >
-                <AccordionItem
-                  borderColor={'transparent'}
-                  borderBottom={'1px solid gray'}
-                  pb={'0.5rem'}
-                  mb={'1rem'}
-                >
-                  <h2>
-                    <AccordionButton h={'4rem'}>
-                      <Box
-                        flex='1'
-                        textAlign='left'
-                        fontSize={['sm', 'md', 'lg']}
-                      >
-                        What makes you different than other laundry service
-                        providers in the area?
-                      </Box>
-                      <AccordionIcon />
-                    </AccordionButton>
-                  </h2>
-                  <AccordionPanel pb={4}>
-                    <Text
-                      fontWeight={'300'}
-                      fontSize={['xs', 'sm', 'md']}
-                      fontSize={['xs', 'md']}
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      You can let us know in the additional information section
+                      when placing your order or you can let us know when we
+                      collect your order.
                     </Text>
                   </AccordionPanel>
                 </AccordionItem>
@@ -282,8 +234,7 @@ const FAQ = () => {
                         textAlign='left'
                         fontSize={['sm', 'md', 'lg']}
                       >
-                        What makes you different than other laundry service
-                        providers in the area?
+                        Do I need to do anything before my order?
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
@@ -294,41 +245,8 @@ const FAQ = () => {
                       fontSize={['xs', 'sm', 'md']}
                       fontSize={['xs', 'md']}
                     >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </Text>
-                  </AccordionPanel>
-                </AccordionItem>
-                <AccordionItem
-                  borderColor={'transparent'}
-                  borderBottom={'1px solid gray'}
-                  pb={'0.5rem'}
-                  mb={'1rem'}
-                >
-                  <h2>
-                    <AccordionButton h={'4rem'}>
-                      <Box
-                        flex='1'
-                        textAlign='left'
-                        fontSize={['sm', 'md', 'lg']}
-                      >
-                        Section 2 title
-                      </Box>
-                      <AccordionIcon />
-                    </AccordionButton>
-                  </h2>
-                  <AccordionPanel pb={4}>
-                    <Text
-                      fontWeight={'300'}
-                      fontSize={['xs', 'sm', 'md']}
-                      fontSize={['xs', 'md']}
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Yes, remove any collar stiffeners and empty the pockets of
+                      the items.
                     </Text>
                   </AccordionPanel>
                 </AccordionItem>

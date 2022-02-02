@@ -39,7 +39,7 @@ const ContactDetails = (props) => {
           fontSize={{ base: 'xs', md: 'md' }}
           fontWeight={'400'}
         >
-          Info@attiredryclean.com
+          info@attiredryclean.co.uk
         </Text>
       </HStack>
     </VStack>
