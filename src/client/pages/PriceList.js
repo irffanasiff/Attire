@@ -48,7 +48,7 @@ const PriceList = () => {
             my={['0', '1rem', '3rem']}
             textAlign={'center'}
           >
-            Offers ✨
+            Offers
           </Text>
           <List w={'100%'}>
             {offersData.map((item) => (
@@ -69,7 +69,7 @@ const PriceList = () => {
                   <Text fontSize={['lg', 'lg', 'xl']} fontWeight={'500'}>
                     {item.title}
                   </Text>
-                  <Text textColor={'yellow.600'} fontSize={['xl', '2xl']}>
+                  <Text textColor={'gray.800'} fontSize={['xl', '2xl']}>
                     {item.price}
                   </Text>
                 </HStack>

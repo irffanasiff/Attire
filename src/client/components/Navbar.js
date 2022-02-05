@@ -7,7 +7,7 @@ import {
   Center,
   useMediaQuery,
 } from '@chakra-ui/react';
-import Logo from './Logo';
+import Logo from './Logo2';
 import Button from './HOC/Button.HOC';
 import { Link, NavigationType, useNavigate } from 'react-router-dom';
 

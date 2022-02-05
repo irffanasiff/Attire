@@ -35,12 +35,12 @@ const Offers = () => {
         >
           <Text textColor={'black'} p={'1rem'} mx={'auto'} textAlign={'center'}>
             <Link to='/price-list'>
-              ✨ Special Offer
-              <Box as='span' textColor='yellow.400' fontWeight={'600'}>
+              Special Offer -
+              <Box as='span' fontWeight={'600'}>
                 {' '}
                 10% off{' '}
               </Box>
-              on All Beadsets - wash & Press
+              on all Bedsets (Wash & Press)
             </Link>
           </Text>
           <Box as='button' bg={'white'} onClick={() => setShowOffers(false)}>

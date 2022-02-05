@@ -1,4 +1,4 @@
-import { Center, Stack, Text, VStack, HStack } from '@chakra-ui/react';
+import { Center, Stack, Text, VStack, Flex, HStack } from '@chakra-ui/react';
 import React from 'react';
 import Layout from '../components/HOC/Layout.HOC';
 import aboutImage from '../../../public/About.jpg';
@@ -12,7 +12,7 @@ const About = () => {
       <Center w={'full'} padding={'4'} bg={'white'}>
         <VStack textColor={'attire.2'} py={['1rem', '2rem']}>
           <Text fontWeight={'600'} fontSize={['lg', 'xl', '3xl']}>
-            Our Mission
+            About Us
           </Text>
           <Stack
             direction={['column', 'row']}
@@ -370,19 +370,32 @@ const About = () => {
                 fontSize={['lg', 'xl', '3xl']}
                 textAlign={'center'}
               >
-                Expereince
+                Experience
               </Text>
-              <Text
-                textAlign={'center'}
-                fontSize={['sm', 'md', 'lg']}
-                padding={['1rem', '1rem', '2rem', '3rem']}
-                maxW={'35rem'}
-              >
-                As an upcoming pick up & drop off service in the London area our
-                aim is to bring the dry cleaning/ laundry experience to you.
-                From the comfort of your home, you will be able to book in a
-                collection at a click of a button.
-              </Text>
+              <Flex flexDirection={{ base: 'column', md: 'row' }}>
+                <Text
+                  textAlign={'center'}
+                  fontSize={['sm', 'md', 'lg']}
+                  padding={['1rem', '1rem', '2rem', '3rem']}
+                  maxW={'35rem'}
+                >
+                  Our team has ammassed almost 30 years of experince in this
+                  field. With having our other dry cleaning businesses in
+                  Spitalfields, Shoreditch, Shepherds Bush, Eden Park and now
+                  Hayes we can deal with most queries or jobs a customer
+                  requires.
+                </Text>
+                <Text
+                  textAlign={'center'}
+                  fontSize={['sm', 'md', 'lg']}
+                  padding={['1rem', '1rem', '2rem', '3rem']}
+                  maxW={'35rem'}
+                >
+                  We have been in the area of Bromley for over 5 years starting
+                  off with Eden Park Dry Cleaners in Eden Park and are now
+                  looking to provide the best service possible in Hayes.
+                </Text>
+              </Flex>{' '}
             </Center>
             <Center
               w={['6rem', '6rem', '9rem']}
@@ -615,7 +628,7 @@ const About = () => {
                 />
               </svg>
             </Center>
-            <Center flexDirection={'column'}>
+            {/*<Center flexDirection={'column'}>
               <Text
                 fontWeight={'600'}
                 fontSize={['lg', 'xl', '3xl']}
@@ -633,7 +646,7 @@ const About = () => {
                 off with Eden Park Dry Cleaners in Eden Park and are now looking
                 to provide the best service possible in Hayes.
               </Text>
-            </Center>
+  </Center>*/}
           </Stack>
         </VStack>
       </Center>
